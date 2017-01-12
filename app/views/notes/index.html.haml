@@ -1,0 +1,105 @@
+%h1 Listing notes
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th M datetime
+      %th Sys
+      %th Dia
+      %th Pulse
+      %th Artm
+      %th Num
+      %th Feeling
+      %th Cmt
+      %th
+      %th
+      %th
+
+  %tbody
+    - @notes.each do |note|
+      %tr
+        %td= note.m_datetime
+        %td.sys= note.sys
+        %td.dia= note.dia
+        %td.pulse= note.pulse
+        %td.artm= note.artm
+        %td= note.num
+        %td= note.feeling
+        %td= note.cmt
+        %td= link_to 'Show', note
+        %td= link_to 'Edit', edit_note_path(note)
+        %td= link_to 'Destroy', note, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Note', new_note_path
+
+:javascript
+  var sysValues = document.getElementsByClassName("sys");
+
+  [].forEach.call(sysValues, function (value) {
+    sysValue = value.innerHTML;
+    if (sysValue <= 120)      value.style.backgroundColor = "lightgreen";
+    else if (sysValue <= 130) {
+      value.style.backgroundColor = "green";
+      value.style.color = "white";
+    } else if (sysValue <= 140) value.style.backgroundColor = "yellow";
+    else if (sysValue <= 160) {
+      value.style.backgroundColor = "red";
+      value.style.color = "white";
+    } else if (sysValue <= 180) {
+      value.style.backgroundColor = "#CC0000";
+      value.style.color = "white";
+    } else {
+      value.style.backgroundColor = "maroon";
+      value.style.color = "white";
+    }
+  });
+
+  var diaValues = document.getElementsByClassName("dia");
+
+  [].forEach.call(diaValues, function (value) {
+    diaValue = value.innerHTML;
+    if (diaValue <= 80)       value.style.backgroundColor = "lightgreen";
+    else if (diaValue <= 85) {
+     value.style.backgroundColor = "green";
+     value.style.color = "white";
+    } else if (diaValue <= 90)  value.style.backgroundColor = "yellow";
+    else if (diaValue <= 100) {
+      value.style.backgroundColor = "red";
+      value.style.color = "white";
+    } else if (diaValue <= 110) {
+      value.style.backgroundColor = "#CC0000";
+      value.style.color = "white";
+    } else {
+      value.style.backgroundColor = "maroon";
+      value.style.color = "white";
+    }
+  });
+
+  var pulseValues = document.getElementsByClassName("pulse");
+
+  [].forEach.call(pulseValues, function (value) {
+    pulseValue = value.innerHTML;
+    if (pulseValue <= 80)       value.style.backgroundColor = "lightyellow";
+    else if (pulseValue <= 85) {
+      value.style.backgroundColor = "green";
+      value.style.color = "white";
+    } else if (pulseValue <= 90) {
+      value.style.backgroundColor = "red";
+      value.style.color = "white";
+    } else if (pulseValue <= 100) {
+      value.style.backgroundColor = "#CC0000";
+      value.style.color = "white";
+    } else {
+      value.style.backgroundColor = "maroon";
+      value.style.color = "white";
+    }
+  });
+
+  var artmValues = document.getElementsByClassName("artm");
+
+  [].forEach.call(artmValues, function (value) {
+    artmValue = value.innerHTML;
+    if (artmValue === 'Y')  value.style.backgroundColor = "darkgrey";
+  });

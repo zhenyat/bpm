@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b M datetime:
+  = @note.m_datetime
+%p
+  %b Sys:
+  = @note.sys
+%p
+  %b Dia:
+  = @note.dia
+%p
+  %b Pulse:
+  = @note.pulse
+%p
+  %b Artm:
+  = @note.artm
+%p
+  %b Num:
+  = @note.num
+%p
+  %b Feeling:
+  = @note.feeling
+%p
+  %b Cmt:
+  = @note.cmt
+
+= link_to 'Edit', edit_note_path(@note)
+\|
+= link_to 'Back', notes_path
