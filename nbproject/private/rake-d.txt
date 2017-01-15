@@ -11,6 +11,7 @@ assets\:environment=Load asset compile environment
 assets\:precompile=Compile all the assets named in config.assets.precompile
 cache_digests\:dependencies=Lookup first-level dependencies for TEMPLATE (like messages/show or comments/_comment.html)
 cache_digests\:nested_dependencies=Lookup nested dependencies for TEMPLATE (like messages/show or comments/_comment.html)
+ckeditor\:nondigest=Create nondigest versions of all ckeditor digest assets
 db\:_dump=
 db\:abort_if_pending_migrations=
 db\:charset=
@@ -59,6 +60,7 @@ db\:version=Retrieves the current schema version number
 default=
 dev\:cache=Toggle development mode caching on/off
 environment=
+haml\:erb2haml=Convert html.erb to html.haml each file in app/views
 initializers=Print out all defined initializers in the order they are invoked by Rails.
 log\:clear=Truncates all/specified *.log files in log/ to zero bytes (specify which logs with LOGS=test,development)
 middleware=Prints out your Rack middleware stack

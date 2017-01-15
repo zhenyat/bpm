@@ -35,23 +35,24 @@
 = link_to 'New Note', new_note_path
 
 :javascript
+  if (1 === 2) {
   var sysValues = document.getElementsByClassName("sys");
-
   [].forEach.call(sysValues, function (value) {
     sysValue = value.innerHTML;
-    if (sysValue <= 120)      value.style.backgroundColor = "lightgreen";
+    if (sysValue < 100)      value.style.backgroundColor = "yellow";
+    else if (sysValue <= 120) value.style.backgroundColor = "lime";
     else if (sysValue <= 130) {
       value.style.backgroundColor = "green";
       value.style.color = "white";
     } else if (sysValue <= 140) value.style.backgroundColor = "yellow";
     else if (sysValue <= 160) {
-      value.style.backgroundColor = "red";
+      value.style.backgroundColor = "tomato";
       value.style.color = "white";
     } else if (sysValue <= 180) {
-      value.style.backgroundColor = "#CC0000";
+      value.style.backgroundColor = "red";
       value.style.color = "white";
     } else {
-      value.style.backgroundColor = "maroon";
+      value.style.backgroundColor = "firebrick";
       value.style.color = "white";
     }
   });
@@ -60,19 +61,20 @@
 
   [].forEach.call(diaValues, function (value) {
     diaValue = value.innerHTML;
-    if (diaValue <= 80)       value.style.backgroundColor = "lightgreen";
+    if (diaValue < 60)        value.style.backgroundColor = "yellow";
+    else if (diaValue <= 80)  value.style.backgroundColor = "lime";
     else if (diaValue <= 85) {
      value.style.backgroundColor = "green";
      value.style.color = "white";
     } else if (diaValue <= 90)  value.style.backgroundColor = "yellow";
     else if (diaValue <= 100) {
-      value.style.backgroundColor = "red";
+      value.style.backgroundColor = "tomato";
       value.style.color = "white";
     } else if (diaValue <= 110) {
-      value.style.backgroundColor = "#CC0000";
+      value.style.backgroundColor = "red";
       value.style.color = "white";
     } else {
-      value.style.backgroundColor = "maroon";
+      value.style.backgroundColor = "firebrick";
       value.style.color = "white";
     }
   });
@@ -86,13 +88,13 @@
       value.style.backgroundColor = "green";
       value.style.color = "white";
     } else if (pulseValue <= 90) {
-      value.style.backgroundColor = "red";
+      value.style.backgroundColor = "tomato";
       value.style.color = "white";
     } else if (pulseValue <= 100) {
-      value.style.backgroundColor = "#CC0000";
+      value.style.backgroundColor = "red";
       value.style.color = "white";
     } else {
-      value.style.backgroundColor = "maroon";
+      value.style.backgroundColor = "firebrick";
       value.style.color = "white";
     }
   });
@@ -103,3 +105,4 @@
     artmValue = value.innerHTML;
     if (artmValue === 'Y')  value.style.backgroundColor = "darkgrey";
   });
+  }
