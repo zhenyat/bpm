@@ -1,6 +1,7 @@
+/*  Colorizing Data cells  */
 $(document).ready(function() {
-  console.log("ZT");
 
+  // Systolic
   var sysValues = document.getElementsByClassName("sys");
 
   [].forEach.call(sysValues, function (value) {
@@ -23,6 +24,7 @@ $(document).ready(function() {
     }
   });
 
+  // Diastolic
   var diaValues = document.getElementsByClassName("dia");
 
   [].forEach.call(diaValues, function (value) {
@@ -45,12 +47,21 @@ $(document).ready(function() {
     }
   });
 
+  // Pulse
   var pulseValues = document.getElementsByClassName("pulse");
 
   [].forEach.call(pulseValues, function (value) {
+
     pulseValue = value.innerHTML;
-    if (pulseValue <= 80)       value.style.backgroundColor = "lightyellow";
-    else if (pulseValue <= 85) {
+    if ( pulseValue == 0) {
+      value.style.backgroundColor = "white";
+      value.style.color = "white";
+    } else if (pulseValue == 1) {
+      value.style.backgroundColor = "firebrick";
+      value.style.color = "firebrick";
+    } else if (pulseValue <= 80) {
+      value.style.backgroundColor = "lightyellow";
+    } else if (pulseValue <= 85) {
       value.style.backgroundColor = "green";
       value.style.color = "white";
     } else if (pulseValue <= 90) {
@@ -63,6 +74,7 @@ $(document).ready(function() {
       value.style.backgroundColor = "firebrick";
       value.style.color = "white";
     }
+
   });
 
   var artmValues = document.getElementsByClassName("artm");
