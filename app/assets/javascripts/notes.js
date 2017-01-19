@@ -6,7 +6,10 @@ $(document).ready(function() {
 
   [].forEach.call(sysValues, function (value) {
     sysValue = value.innerHTML;
-    if (sysValue < 100)      value.style.backgroundColor = "yellow";
+    if ( sysValue == 0) {
+      value.style.backgroundColor = "white";
+      value.style.color = "white";
+    } else if (sysValue < 100)      value.style.backgroundColor = "yellow";
     else if (sysValue <= 120) value.style.backgroundColor = "lime";
     else if (sysValue <= 130) {
       value.style.backgroundColor = "green";
@@ -29,7 +32,10 @@ $(document).ready(function() {
 
   [].forEach.call(diaValues, function (value) {
     diaValue = value.innerHTML;
-    if (diaValue < 60)        value.style.backgroundColor = "yellow";
+    if ( diaValue == 0) {
+      value.style.backgroundColor = "white";
+      value.style.color = "white";
+    } else if (diaValue < 60)        value.style.backgroundColor = "yellow";
     else if (diaValue <= 80)  value.style.backgroundColor = "lime";
     else if (diaValue <= 85) {
      value.style.backgroundColor = "green";
@@ -51,14 +57,14 @@ $(document).ready(function() {
   var pulseValues = document.getElementsByClassName("pulse");
 
   [].forEach.call(pulseValues, function (value) {
-
     pulseValue = value.innerHTML;
     if ( pulseValue == 0) {
       value.style.backgroundColor = "white";
       value.style.color = "white";
-    } else if (pulseValue == 1) {
+    } else if (pulseValue == 1) {                 // === not OK!
       value.style.backgroundColor = "firebrick";
-      value.style.color = "firebrick";
+      value.style.color = "white";
+      value.innerHTML = '< 40';
     } else if (pulseValue <= 80) {
       value.style.backgroundColor = "lightyellow";
     } else if (pulseValue <= 85) {
@@ -74,7 +80,6 @@ $(document).ready(function() {
       value.style.backgroundColor = "firebrick";
       value.style.color = "white";
     }
-
   });
 
   var artmValues = document.getElementsByClassName("artm");
