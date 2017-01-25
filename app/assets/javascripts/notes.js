@@ -61,12 +61,17 @@ $(document).ready(function() {
     if ( pulseValue == 0) {
       value.style.backgroundColor = "white";
       value.style.color = "white";
-    } else if (pulseValue == 1) {                 // === not OK!
+    } else if (pulseValue == 1) {                 // === Too Low!
       value.style.backgroundColor = "firebrick";
       value.style.color = "white";
       value.innerHTML = '< 40';
-    } else if (pulseValue <= 80) {
+    } else if (pulseValue < 50) {
+      value.style.backgroundColor = "tomato";
+      value.style.color = "white";
+    } else if (pulseValue < 60) {
       value.style.backgroundColor = "lightyellow";
+    } else if (pulseValue <= 80) {
+      value.style.backgroundColor = "lightgreen";
     } else if (pulseValue <= 85) {
       value.style.backgroundColor = "green";
       value.style.color = "white";
