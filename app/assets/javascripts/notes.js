@@ -10,12 +10,12 @@ $(document).ready(function() {
       value.style.backgroundColor = "white";
       value.style.color = "white";
     } else if (sysValue < 100)      value.style.backgroundColor = "yellow";
-    else if (sysValue <= 120) value.style.backgroundColor = "lime";
-    else if (sysValue <= 130) {
+    else if (sysValue < 120) value.style.backgroundColor = "lime";
+    else if (sysValue < 130) {
       value.style.backgroundColor = "green";
       value.style.color = "white";
-    } else if (sysValue <= 140) value.style.backgroundColor = "yellow";
-    else if (sysValue <= 160) {
+    } else if (sysValue < 140) value.style.backgroundColor = "yellow";
+    else if (sysValue < 160) {
       value.style.backgroundColor = "tomato";
       value.style.color = "white";
     } else if (sysValue <= 180) {
@@ -36,12 +36,12 @@ $(document).ready(function() {
       value.style.backgroundColor = "white";
       value.style.color = "white";
     } else if (diaValue < 60)        value.style.backgroundColor = "yellow";
-    else if (diaValue <= 80)  value.style.backgroundColor = "lime";
-    else if (diaValue <= 85) {
+    else if (diaValue < 80)  value.style.backgroundColor = "lime";
+    else if (diaValue < 85) {
      value.style.backgroundColor = "green";
      value.style.color = "white";
-    } else if (diaValue <= 90)  value.style.backgroundColor = "yellow";
-    else if (diaValue <= 100) {
+    } else if (diaValue < 90)  value.style.backgroundColor = "yellow";
+    else if (diaValue < 100) {
       value.style.backgroundColor = "tomato";
       value.style.color = "white";
     } else if (diaValue <= 110) {

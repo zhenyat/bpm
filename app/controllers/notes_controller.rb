@@ -8,9 +8,9 @@ class NotesController < ApplicationController
 #    @notes = Note.where("m_datetime >='2015-05-01' AND m_datetime <'2015-06-01'").order(:m_datetime)   # November 2015
 #    @notes = Note.where("m_datetime >='2016-11-01' AND m_datetime <'2016-12-01'").order(:m_datetime)   # November 2016
 #    @notes = Note.where("m_datetime >='2016-12-01' AND m_datetime <'2017-01-01'").order(:m_datetime)   # December 2016
-#    @notes = Note.where("m_datetime >='2017-01-01' AND m_datetime <'2017-02-01'").order(:m_datetime)   # January  2017
+    @notes = Note.where("m_datetime >='2017-01-01' AND m_datetime <'2017-02-01'").order(:m_datetime)   # January  2017
 #    @notes = Note.where("artm='Y'").order(:m_datetime)
-    @notes = Note.order(:m_datetime)
+#    @notes = Note.order(:m_datetime)
 #    @notes = Note.where("m_datetime >='2010-11-01' AND m_datetime <'2010-11-09'").order(:m_datetime)   # November 2015
   end
 
