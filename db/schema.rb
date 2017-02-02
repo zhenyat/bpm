@@ -13,14 +13,16 @@
 ActiveRecord::Schema.define(version: 20170111123127) do
 
   create_table "notes", force: :cascade do |t|
-    t.text    "m_datetime", limit: 19,  default: "1970-01-01 00:00:00", null: false
-    t.integer "sys",                    default: 0,                     null: false
-    t.integer "dia",                    default: 0,                     null: false
-    t.integer "pulse",                  default: 0,                     null: false
-    t.text    "artm",       limit: 1,   default: "N",                   null: false
-    t.integer "num",                    default: 1,                     null: false
-    t.text    "feeling",    limit: 1,   default: "U",                   null: false
-    t.text    "cmt",        limit: 100
+    t.datetime "measured_at",             default: '1970-01-01 00:00:00', null: false
+    t.integer  "sys",                     default: 0,                     null: false
+    t.integer  "dia",                     default: 0,                     null: false
+    t.integer  "pulse",                   default: 0,                     null: false
+    t.integer  "artm",        limit: 1,   default: 0,                     null: false
+    t.integer  "num",                     default: 1,                     null: false
+    t.integer  "feeling",     limit: 1,   default: 3,                     null: false
+    t.text     "cmt",         limit: 100
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
   end
 
 end

@@ -5,8 +5,13 @@ class NotesController < ApplicationController
   # GET /notes.json
   def index
 #    @notes = Note.all
-    @notes = Note.where("measured_at >='2017-02-01' AND measured_at <'2017-02-28'").order(:measured_at)   # January  2017
+#    @notes = Note.where("measured_at >='2015-05-01' AND measured_at <'2015-06-01'").order(:measured_at)   # November 2015
+#    @notes = Note.where("measured_at >='2016-11-01' AND measured_at <'2016-12-01'").order(:measured_at)   # November 2016
+#    @notes = Note.where("measured_at >='2016-12-01' AND measured_at <'2017-01-01'").order(:measured_at)   # December 2016
+    @notes = Note.where("measured_at >='2017-01-01' AND measured_at <'2017-02-01'").order(:measured_at)   # January  2017
 #    @notes = Note.where("artm='Y'").order(:measured_at)
+#    @notes = Note.order(:measured_at)
+#    @notes = Note.where("measured_at >='2010-11-01' AND measured_at <'2010-11-09'").order(:measured_at)   # November 2015
   end
 
   # GET /notes/1

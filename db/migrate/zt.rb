@@ -1,7 +1,7 @@
 class CreateNotes < ActiveRecord::Migration[5.0]
   def change
     create_table :notes do |t|
-      t.text    :m_datetime, null: false, default: '1970-01-01 00:00:00', limit: 19
+      t.text    :measured_at, null: false, default: '1970-01-01 00:00:00', limit: 19
       t.integer :sys,        null: false, default: 0
       t.integer :dia,        null: false, default: 0
       t.integer :pulse,      null: false, default: 0

@@ -1,0 +1,19 @@
+= simple_form_for(@note) do |f|
+  = f.error_notification
+
+  %table.table
+
+    %tbody
+      %tr
+        %td= f.input :measured_at
+        %td= f.input :sys
+        %td= f.input :dia
+        %td= f.input :pulse
+        %td= f.input :artm
+        %td= f.input :num
+        %td= f.input :feeling
+      %tr
+        %td= f.input :cmt
+
+  .form-actions
+    = f.button :submit

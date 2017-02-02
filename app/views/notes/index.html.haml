@@ -1,9 +1,11 @@
 %h1 Listing notes
+= link_to 'New Note', new_note_path
+%br
 
 %table.table.table-hover
   %thead
     %tr
-      %th M datetime
+      %th Measured At
       %th Sys
       %th Dia
       %th Pulse
@@ -18,7 +20,7 @@
   %tbody
     - @notes.each do |note|
       %tr
-        %td= note.m_datetime
+        %td= note.measured_at.strftime("%Y-%m-%d %H:%M")
         %td.sys= note.sys
         %td.dia= note.dia
         %td.pulse= note.pulse
