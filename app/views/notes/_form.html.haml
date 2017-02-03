@@ -1,3 +1,28 @@
+- if @today_notes
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Measured At
+        %th Sys
+        %th Dia
+        %th Pulse
+        %th Artm
+        %th Num
+        %th Feeling
+        %th Cmt
+
+    %tbody
+      - @today_notes.each do |note|
+        %tr
+          %td= note.measured_at.strftime("%Y-%m-%d %H:%M")
+          %td.sys= note.sys
+          %td.dia= note.dia
+          %td.pulse= note.pulse
+          %td.artm= note.artm
+          %td= note.num
+          %td= note.feeling
+          %td= note.cmt
+
 = simple_form_for(@note) do |f|
   = f.error_notification
 

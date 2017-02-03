@@ -17,6 +17,7 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
+    @today_notes = Note.where("measured_at >= ?", Time.now.strftime('%Y-%m-%d'))
   end
 
   # GET /notes/1/edit
@@ -30,8 +31,9 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
-        format.json { render :show, status: :created, location: @note }
+        format.html { redirect_to action: :new, notice: 'Note was successfully created.' }
+#        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+#        format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new }
         format.json { render json: @note.errors, status: :unprocessable_entity }
