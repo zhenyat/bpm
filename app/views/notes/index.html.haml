@@ -1,7 +1,25 @@
 %h1 Listing notes
-= link_to 'New Note', new_note_path
-%br
 
+= form_tag pick_path do
+  .row
+    .col-md-2
+      .form-control#artm
+        = label_tag :artm, "Arithmia:"
+        = select_tag :artm, options_for_select([['All data', 'a'], ['No', 0], ['Yes', 1]], selected: @artm)
+    .col-md-2
+      .form-control#year
+        = label_tag :year, "Year:"
+        = select_tag :year, options_for_select([ ["All years", "a"], "2017", "2016",  "2015", "2011", "2010"], selected: @year) #Time.now.year, )
+    .col-md-2
+      .form-control#month
+        = label_tag :month, "Month:"
+        = select_tag :month, options_for_select([["All months", "a"], ['January', 1], ['February', 2], ['March', 3], ['April', 4], ['May', 5], ['June', 6], ['July', 7], ['August', 8], ['September', 9], ['October', 10], ['November', 11], ['December', 12] ], selected: @month)#Time.now.strftime("%B"))
+    .col-md-1
+      = submit_tag "submit"
+      /.form-actions
+      /  %button.btn.btn-info#go{:type => "button"} Go
+
+%br
 %table.table.table-hover
   %thead
     %tr
@@ -10,7 +28,7 @@
       %th Dia
       %th Pulse
       %th Artm
-      %th Num
+      %th Trials
       %th Feeling
       %th Cmt
       %th
@@ -25,7 +43,7 @@
         %td.dia= note.dia
         %td.pulse= note.pulse
         %td.artm= note.artm
-        %td= note.num
+        %td= note.trials
         %td= note.feeling
         %td= note.cmt
         %td= link_to 'Show', note

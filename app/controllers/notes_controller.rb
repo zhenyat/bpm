@@ -1,12 +1,24 @@
 class NotesController < ApplicationController
+  include NoteMethods
   before_action :set_note, only: [:show, :edit, :update, :destroy]
+
+    def pick
+      redirect_to notes_path(artm: params[:artm], year: params[:year], month: params[:month])
+    end
 
   # GET /notes
   # GET /notes.json
   def index
-#    @notes = Note.all
-    @notes = Note.where("measured_at >='2017-02-01' AND measured_at <'2017-02-28'").order(:measured_at)   # January  2017
-#    @notes = Note.where("artm='Y'").order(:measured_at)
+    if params[:artm]
+      @artm  = params[:artm]
+      @year  = params[:year]
+      @month = params[:month]
+    else
+      @artm  = 'a'
+      @year  = Time.now.year
+      @month = Time.now.month
+    end
+    @notes = notes_collection @artm, @year, @month
   end
 
   # GET /notes/1
@@ -17,7 +29,7 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
-    @today_notes = Note.where("measured_at >= ?", Time.now.strftime('%Y-%m-%d'))
+    @today_notes = Note.where("measured_at >= ?", Time.now.strftime('%Y-%m-%d')).order(:measured_at)
   end
 
   # GET /notes/1/edit
@@ -73,6 +85,6 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:measured_at, :sys, :dia, :pulse, :artm, :num, :feeling, :cmt)
+      params.require(:note).permit(:measured_at, :sys, :dia, :pulse, :artm, :num, :feeling, :cmt, :artm, :year, :month)
     end
 end

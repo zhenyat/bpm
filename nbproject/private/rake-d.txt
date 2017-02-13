@@ -43,6 +43,7 @@ db\:schema\:dump=Creates a db/schema.rb file that is portable against any DB sup
 db\:schema\:load=Loads a schema.rb file into the database
 db\:schema\:load_if_ruby=
 db\:seed=Loads the seed data from db/seeds.rb
+db\:seed\:dump=Dump records from the database into db/seeds.rb
 db\:setup=Creates the database, loads the schema, and initializes with the seed data (use db:reset to also drop the database first)
 db\:structure\:dump=Dumps the database structure to db/structure.sql. Specify another file with SCHEMA=db/my_structure.sql
 db\:structure\:load=Recreates the databases from the structure.sql file

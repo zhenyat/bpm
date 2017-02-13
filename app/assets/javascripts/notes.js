@@ -93,4 +93,34 @@ $(document).ready(function() {
     artmValue = value.innerHTML;
     if (artmValue === 'Y')  value.style.backgroundColor = "darkgrey";
   });
+
+//  go.onclick = function() {
+//    var objArtm = document.getElementById("artm");
+//     var artm   = objArtm.options[objArtm.selectedIndex].value;
+////    alert(objArtm.text);
+//    console.log(artm);
+//  }
+
+  go.onclick = function() {
+    var objArtm = document.getElementById("artm");
+    var artm   = objArtm.options[objArtm.selectedIndex].value;
+
+    var objYear = document.getElementById("year");
+    var year    = objYear.options[objYear.selectedIndex].value;
+
+    var objMonth = document.getElementById("month");
+    var month    = objMonth.options[objMonth.selectedIndex].value;
+    alert(typeof(artm) + " / " + typeof(year) + " / " + typeof(month));
+    showNotes(artm, year, month);
+  };
+
+  function showNotes(artm, year, month) {
+    alert("Show: " + artm + " / " + year + " / " + month);
+//    var xhttp = new XMLHttpRequest();
+//    xhttp.onreadystatechange = function() {
+//      if (this.readyState === 4 && this.status === 200) {
+//      document.getElementById("txtHint").innerHTML=this.responseText;
+//      }
+//    };
+  }
 });

@@ -5,9 +5,9 @@ class CreateNotes < ActiveRecord::Migration[5.0]
       t.integer  :sys,         null: false, default: 0
       t.integer  :dia,         null: false, default: 0
       t.integer  :pulse,       null: false, default: 0
-      t.integer  :artm,        null: false, default: 0, limit: 1
-      t.integer  :num,         null: false, default: 1
-      t.integer  :feeling,     null: false, default: 3, limit: 1
+      t.integer  :artm,        null: false, default: 0, limit: 1   # default: 'N'
+      t.integer  :trials,      null: false, default: 1
+      t.integer  :feeling,     null: false, default: 3, limit: 1   # default: 'U'
       t.text     :cmt,                                  limit: 100
 
       t.timestamps

@@ -1,0 +1,67 @@
+%h1 Listing notes
+
+.row
+  .col-md-1
+    %h4= 'Arithmia'
+  .col-md-1
+    %h4= 'Year'
+  .col-md-1
+    %h4= 'Month'
+.row
+  .col-md-1
+    %select.form-control#artm
+      %option{:value => "all"} All data
+      %option{:value => "no"}  No
+      %option{:value => "yes"} Yes
+  .col-md-1
+    %select.form-control#year
+      %option{:value => "all"} All years
+      %option{:value => "2017", :selected => true}  2017
+      %option{:value => "2016"} 2016
+      %option{:value => "2015"} 2015
+      %option{:value => "2015"} 2011
+      %option{:value => "2015"} 2010
+  .col-md-1
+    - months = %w(January, February, March, April, May, june, July, August, September, October, November, December)
+    %select#month.form-control
+      %option{:value => "all"} All months
+      - months.each do |month|
+        %option{:value => month}= month
+
+  .col-md-1
+    %button.btn.btn-info#go{:type => "button"} Go
+
+%br
+%table.table.table-hover
+  %thead
+    %tr
+      %th Measured At
+      %th Sys
+      %th Dia
+      %th Pulse
+      %th Artm
+      %th Num
+      %th Feeling
+      %th Cmt
+      %th
+      %th
+      %th
+
+  %tbody
+    - @notes.each do |note|
+      %tr
+        %td= note.measured_at.strftime("%Y-%m-%d %H:%M")
+        %td.sys= note.sys
+        %td.dia= note.dia
+        %td.pulse= note.pulse
+        %td.artm= note.artm
+        %td= note.trials
+        %td= note.feeling
+        %td= note.cmt
+        %td= link_to 'Show', note
+        %td= link_to 'Edit', edit_note_path(note)
+        %td= link_to 'Destroy', note, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Note', new_note_path

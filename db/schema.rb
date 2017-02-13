@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170111123127) do
     t.integer  "dia",                     default: 0,                     null: false
     t.integer  "pulse",                   default: 0,                     null: false
     t.integer  "artm",        limit: 1,   default: 0,                     null: false
-    t.integer  "num",                     default: 1,                     null: false
+    t.integer  "trials",                  default: 1,                     null: false
     t.integer  "feeling",     limit: 1,   default: 3,                     null: false
     t.text     "cmt",         limit: 100
     t.datetime "created_at",                                              null: false

@@ -19,7 +19,7 @@
           %td.dia= note.dia
           %td.pulse= note.pulse
           %td.artm= note.artm
-          %td= note.num
+          %td= note.trials
           %td= note.feeling
           %td= note.cmt
 
@@ -27,13 +27,22 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :measured_at, as: :datetime, start_year: Time.now.year, order: [:day, :month, :year]
+    - if @note.sys > 0  # updated note
+      = f.input :measured_at, as: :datetime, start_year: @note.measured_at.year, end_year: Time.now.year, order: [:day, :month, :year]
+    - else              # new note
+      = f.input :measured_at, as: :datetime, start_year: Time.now.year, end_year: 2010, order: [:day, :month, :year], selected: Time.now
     = f.input :sys
     = f.input :dia
     = f.input :pulse
-    = f.input :artm, selected: 'N'
-    = f.input :num
-    = f.input :feeling, selected: 'G'
+    - if @note.sys > 0  # updated note
+      = f.input :artm
+    - else              # new note
+      = f.input :artm, selected: 'N'
+    = f.input :trials
+    - if @note.sys > 0  # updated note
+      = f.input :feeling
+    - else              # new note
+      = f.input :feeling, selected: 'G'
     = f.input :cmt
 
   .form-actions

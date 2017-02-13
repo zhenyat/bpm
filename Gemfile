@@ -23,6 +23,7 @@
 #               The file revision following the 5.0.0. version
 #   10.10.2016  RoR 5.0.0.1
 #   09.01.2017  Rails 5.0.1 / Ruby 2.4.0 (with json not OK for Ruby 2.4.0)
+#   07.02.2017 gem 'seed_dump' added
 ################################################################################
 source 'https://rubygems.org'
 ruby '2.4.0'
@@ -34,6 +35,7 @@ gem 'sqlite3'                                   # Use sqlite3 as the database fo
 #gem 'mysql2', '>= 0.3.18', '< 0.5'             # Use mysql as the database for Active Record
 #gem 'pg', '~> 0.18'                            # Use postgresql as the database for Active Record
 #gem 'pg_search'                                # https://mkdev.me/posts/kak-delat-full-text-poisk-v-rails-pri-pomoschi-postgresql
+gem 'seed_dump'                                 # https://github.com/rroblak/seed_dump
 
 gem 'sass-rails'                                # Use SCSS for stylesheets
 gem 'uglifier'                                  # Use Uglifier as compressor for JavaScript assets
