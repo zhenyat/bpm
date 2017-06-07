@@ -23,12 +23,13 @@
 #               The file revision following the 5.0.0. version
 #   10.10.2016  RoR 5.0.0.1
 #   09.01.2017  Rails 5.0.1 / Ruby 2.4.0 (with json not OK for Ruby 2.4.0)
-#   07.02.2017 gem 'seed_dump' added
+#   07.02.2017  gem 'seed_dump' added
+#   05.03.2017  Rails 5.0.2
 ################################################################################
 source 'https://rubygems.org'
 ruby '2.4.0'
 
-gem 'rails', '~> 5.0.1'                       # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.0.2'                         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'sqlite3'                                   # Use sqlite3 as the database for Active Record
 #gem 'sqlite3', groups: [:test, :development]
@@ -106,3 +107,4 @@ end
 # gem 'capistrano-rails', group: :development   # Use Capistrano for deployment
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+
