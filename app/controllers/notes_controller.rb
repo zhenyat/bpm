@@ -29,7 +29,7 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
-    @today_notes = Note.where("created_at >= ?", Time.now.strftime('%Y-%m-%d')).order(:measured_at)
+    @today_notes = Note.where("created_at >= ?", Time.now.utc.strftime('%Y-%m-%d')).order(:measured_at)
   end
 
   # GET /notes/1/edit
