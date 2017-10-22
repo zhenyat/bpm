@@ -28,9 +28,9 @@
 #   02.09.2017  Rails 5.1.3
 ################################################################################
 source 'https://rubygems.org'
-ruby '2.4.1'
+ruby '2.4.2'
 
-gem 'rails', '~> 5.1.3'                         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.1.4'                         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'sqlite3'                                   # Use sqlite3 as the database for Active Record
 #gem 'sqlite3', groups: [:test, :development]
