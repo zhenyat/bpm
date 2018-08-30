@@ -42,17 +42,20 @@
 #   23.10.2017  Fusuion Charts
 #   26.10.2017  disable gem 'rails_12factor' - not needed anymore
 #   09.01.2018  Ruby 2.5.0, bootstrap 4.0.0.beta3
+#   10.02.2018  bootstrap 4.0.0
+#   30.08.2018  ruby 2.5.1 / rails 5.2.1 & puma 3.12
+#               bug 'halt_callback_chains_on_return_false' fixed in new_framework_defaults.rb
 ################################################################################
 source 'https://rubygems.org'
-ruby '2.5.0'
+ruby '2.5.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1.4'                         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-
+gem 'rails', '~> 5.2.1'                         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+     
 gem 'sqlite3'                                   # Use sqlite3    as the database for Active Record
 #gem 'sqlite3', groups: [:test, :development]
 #gem 'mysql2', '>= 0.3.18', '< 0.5'             # Use mysql      as the database for Active Record
@@ -73,9 +76,9 @@ gem 'jquery-rails'                              # Use jquery as the JavaScript l
 gem 'turbolinks', '~> 5'                        # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'jbuilder', '~> 2.5'                        # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 
-gem 'puma'                                      # Use Puma as the app server
+gem 'puma', '~> 3.12'                           # Use Puma as the app server
 
-#gem 'sdoc', group: :doc                         # bundle exec rake doc:rails generates the API under doc/api.
+#gem 'sdoc', group: :doc                        # bundle exec rake doc:rails generates the API under doc/api.
 gem 'bcrypt', '~> 3.1.7'                        # Use ActiveModel has_secure_password
 
 gem 'haml-rails'                                # https://github.com/indirect/haml-rails
@@ -101,7 +104,7 @@ gem 'faker'
 #gem 'will_paginate'
 #gem 'bootstrap-will_paginate'
 
-gem 'bootstrap', '~> 4.0.0.beta3'               # Bootstrap 4:  https://github.com/twbs/bootstrap-rubygem
+gem 'bootstrap', '~> 4.0.0'                     # Bootstrap 4:  https://github.com/twbs/bootstrap-rubygem
 
 gem 'lightbox2-rails'                           # https://github.com/gavinkflam/lightbox2-rails
 gem 'simple_form'                               # https://github.com/plataformatec/simple_form
