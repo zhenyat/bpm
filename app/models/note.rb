@@ -7,6 +7,6 @@ class Note < ApplicationRecord
   validates :trials,      presence: true
   validates :feeling,     presence: true
 
-  enum artm:      %w(N Y)
+  enum artm:      %w(No Yes Unavailable)
   enum feeling:   %w(G S B U)
 end
