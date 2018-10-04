@@ -91,7 +91,7 @@ $(document).ready(function() {
 
   [].forEach.call(artmValues, function (value) {
     artmValue = value.innerHTML;
-    if (artmValue === 'Y')  value.style.backgroundColor = "darkgrey";
+    if (artmValue === 'Yes')  value.style.backgroundColor = "darkgrey";
   });
 
 //  go.onclick = function() {
