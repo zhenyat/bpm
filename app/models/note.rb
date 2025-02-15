@@ -8,9 +8,8 @@ class Note < ApplicationRecord
   validates :statin_dose,   presence: true
   validates :euthyrox_dose, presence: true
 
-  enum :afib, {no: 0, yes: 1, unavailable: 2}
-  enum :state, {good: 0, satisfactory: 1, bad: 2, undefined: 3}
-  # enum :statin_dose, {'small(40)': 40, 'normal(80)': 80, '(120)': 120, 'double(160)': 160}
+  enum :afib, {no: 0, yes: 1, 'n/a': 2}
+  enum :state, {good: 0, satisfactory: 1, bad: 2, 'n/a': 3}, prefix: :state
   enum :statin_dose, %w(20 40 80 120 160), default: 80
   enum :euthyrox_dose, %w(25 50 62.5 66 75 81.5 88 100 112 125 137 150), default: 66
 

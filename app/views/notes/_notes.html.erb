@@ -1,0 +1,37 @@
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+            <th>Measured at</th>
+            <th>Systolic</th>
+            <th>Diastolic</th>
+            <th>Heart Rate</th>
+            <th>AFib</th>
+            <th>State</th>
+            <th>Statin Dose</th>
+            <th>Euthyrox Dose</th>
+            <th>Weight</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% notes.each do |note| %>
+            <tr>
+              <td><%= note.measured_at.strftime("%Y-%m-%d %H:%M") %></td>
+              <%= render 'shared/systolic_colorized',  value: note.systolic %>
+              <%= render 'shared/diastolic_colorized', value: note.diastolic %>
+              <%= render 'shared/heart_rate_colorized', value: note.heart_rate %>
+              <%= render 'shared/afib_colorized', value: note.afib %>
+              <%= render 'shared/state_colorized', value: note.state %>
+              <!--td><%#= note.heart_rate %></td>
+              <td><%= note.afib %></td>
+              <td><%= note.state %></td-->
+              <td><%= note.statin_dose %></td>
+              <td><%= note.euthyrox_dose %></td>
+              <td><%= note.weight %></td>
+              <td><%= note.comment %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>

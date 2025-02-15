@@ -1,0 +1,15 @@
+<% if value < 60 then %>
+  <td class="font-bold text-yellow-300"><%= value %></td>
+<% elsif value < 80 then %>
+  <td class="font-bold text-green-500"><%= value %></td>
+<% elsif value < 85 then %>
+  <td class="font-bold text-green-700"><%= value %></td>
+<% elsif value < 90 then %>
+  <td class="font-bold text-yellow-400"><%= value %></td>
+<% elsif value < 100 then %>
+  <td class="font-bold text-red-300"><%= value %></td>
+<% elsif value < 110 then %>
+  <td class="font-bold text-red-500"><%= value %></td>
+<% else %>
+  <td class="font-bold text-red-700"><%= value %></td>
+<% end %>

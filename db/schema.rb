@@ -18,8 +18,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_15_102318) do
     t.integer "heart_rate", default: 60, null: false
     t.integer "afib", limit: 1, default: 0, null: false
     t.integer "state", limit: 1, default: 0, null: false
-    t.integer "statin_dose", default: 80, null: false
-    t.integer "euthyrox_dose", default: 66, null: false
+    t.integer "statin_dose", default: 2, null: false
+    t.integer "euthyrox_dose", default: 3, null: false
     t.decimal "weight", precision: 4, scale: 1
     t.string "comment"
     t.datetime "created_at", null: false
