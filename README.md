@@ -1,7 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+r g scaffold Note measured_at:datetime systolic:integer diastolic:integer heart_rate:integer afib:integer state:integer statin_dose:integer euthyrox_dose:integer weight:decimal{4.1} comment
+
 
 Things you may want to cover:
 

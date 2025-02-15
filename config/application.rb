@@ -23,5 +23,12 @@ module Bpm
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    
+    ### ZT Updates
+    # config.multilingual         = false       # Alternative to MULTILINGUAL (used as: Rails.application.config.multilingual) 
+    config.time_zone              = "Moscow"    # Default: UTC
+    config.i18n.available_locales = %w(en ru)   # [:en, :de, :ru] - to be compared / investigated
+    config.i18n.default_locale    = :en
+    config.i18n.load_path        += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]  # YAML Multiple structure
   end
 end

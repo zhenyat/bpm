@@ -1,0 +1,75 @@
+<%= form_with(model: note, class: "contents") do |form| %>
+  <% if note.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% note.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :measured_at %>
+    <%= form.datetime_field :measured_at, class: ["block shadow-sm rounded-md border outline-hidden px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": note.errors[:measured_at].none?, "border-red-400 focus:outline-red-600": note.errors[:measured_at].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :systolic %>
+    <%= form.number_field :systolic, class: ["block shadow-sm rounded-md border outline-hidden px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": note.errors[:systolic].none?, "border-red-400 focus:outline-red-600": note.errors[:systolic].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :diastolic %>
+    <%= form.number_field :diastolic, class: ["block shadow-sm rounded-md border outline-hidden px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": note.errors[:diastolic].none?, "border-red-400 focus:outline-red-600": note.errors[:diastolic].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :heart_rate %>
+    <%= form.number_field :heart_rate, class: ["block shadow-sm rounded-md border outline-hidden px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": note.errors[:heart_rate].none?, "border-red-400 focus:outline-red-600": note.errors[:heart_rate].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :afib %>
+    <%= form.select :afib, options_for_select(Note.afibs.keys, {selected: @note.afib || Note.new.afib}),
+          class: ["block shadow-sm rounded-md border outline-hidden px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": note.errors[:afib].none?, "border-red-400 focus:outline-red-600": note.errors[:afib].any?}]
+    %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :state %>
+    <%= form.select :state, options_for_select(Note.states.keys, {selected: @note.state || Note.new.state}),
+          class: ["block shadow-sm rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": note.errors[:state].none?, "border-red-400 focus:outline-red-600": note.errors[:state].any?}]
+    %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :statin_dose %>
+    <%= form.select :statin_dose, options_for_select(Note.statin_doses.keys, {selected: @note.statin_dose || Note.new.statin_dose}),
+          class: ["block shadow-sm rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": note.errors[:statin_dose].none?, "border-red-400 focus:outline-red-600": note.errors[:statin_dose].any?}]
+    %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :euthyrox_dose %>
+    <%= form.select :euthyrox_dose, options_for_select(Note.euthyrox_doses.keys, {selected: @note.euthyrox_dose || Note.new.euthyrox_dose}),
+          class: ["block shadow-sm rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": note.errors[:statin_dose].none?, "border-red-400 focus:outline-red-600": note.errors[:statin_dose].any?}]
+    %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :weight %>
+    <%= form.text_field :weight, value: 69.0, class: ["block shadow-sm rounded-md border outline-hidden px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": note.errors[:weight].none?, "border-red-400 focus:outline-red-600": note.errors[:weight].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :comment %>
+    <%= form.text_field :comment, class: ["block shadow-sm rounded-md border outline-hidden px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": note.errors[:comment].none?, "border-red-400 focus:outline-red-600": note.errors[:comment].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

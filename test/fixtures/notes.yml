@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  measured_at: 2025-02-15 13:23:18
+  systolic: 1
+  diastolic: 1
+  heart_rate: 1
+  afib: 1
+  state: 1
+  statin_dose: 1
+  euthyrox_dose: 1
+  weight: 9.99
+  comment: MyString
+
+two:
+  measured_at: 2025-02-15 13:23:18
+  systolic: 1
+  diastolic: 1
+  heart_rate: 1
+  afib: 1
+  state: 1
+  statin_dose: 1
+  euthyrox_dose: 1
+  weight: 9.99
+  comment: MyString
