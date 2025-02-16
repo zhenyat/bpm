@@ -4,6 +4,7 @@ class NotesController < ApplicationController
   # GET /notes or /notes.json
   def index
     @notes = Note.all
+    @morning_notes = Note.where()
   end
 
   # GET /notes/1 or /notes/1.json
@@ -13,6 +14,8 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
+    @notes_created_today = Note.where("created_at >= ?", Time.now.utc.strftime('%Y-%m-%d')).order(:measured_at)
+    @time_now = Time.new.strftime("%Y-%m-%d %H:%M")
   end
 
   # GET /notes/1/edit

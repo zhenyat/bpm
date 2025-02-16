@@ -14,4 +14,5 @@ class Note < ApplicationRecord
   enum :euthyrox_dose, %w(25 50 62.5 66 75 81.5 88 100 112 125 137 150), default: 66
 
   scope :of_current_month, -> { where("measured_at >= ? AND measured_at <= ?", Time.now.at_beginning_of_month, Time.now.at_end_of_month) }
+
 end
