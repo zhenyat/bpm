@@ -1,10 +1,15 @@
 class NotesController < ApplicationController
+  include Zt
+  
   before_action :set_note, only: %i[ show edit update destroy ]
 
   # GET /notes or /notes.json
   def index
     @notes = Note.all
-    @morning_notes = Note.where()
+    @morning_notes = morning_notes
+    @daytime_notes = daytime_notes
+    @evening_notes = evening_notes
+    @night_notes = night_notes
   end
 
   # GET /notes/1 or /notes/1.json
@@ -14,12 +19,12 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
-    @notes_created_today = Note.where("created_at >= ?", Time.now.utc.strftime('%Y-%m-%d')).order(:measured_at)
-    @time_now = Time.new.strftime("%Y-%m-%d %H:%M")
+    @notes_created_today = notes_created_today
   end
 
   # GET /notes/1/edit
   def edit
+    @notes_created_today = notes_created_today
   end
 
   # POST /notes or /notes.json

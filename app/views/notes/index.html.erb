@@ -11,10 +11,37 @@
   </div>
 
   <div id="notes" class="min-w-full">
-    <% if @notes.any? %>
-        <%= render 'notes', notes: @notes %>
+    <h2 class="text-2xl font-extrabold p-4 dark:text-white">Morning Data</h2>
+    <% if @morning_notes.any? %>
+        <%= render 'notes', notes: @morning_notes %>
     <% else %>
-      <p class="text-center my-10">No notes found.</p>
+      <p class="text-center my-10">No morning notes found.</p>
     <% end %>
   </div>
-</div>
+
+  <div id="notes" class="min-w-full">
+      <h2 class="text-2xl font-extrabold p-4 dark:text-white">Daytime Data</h2>
+    <% if @daytime_notes.any? %>
+        <%= render 'notes', notes: @daytime_notes %>
+    <% else %>
+      <p class="text-center my-10">No daytaimenotes found.</p>
+    <% end %>
+  </div>
+
+  <div id="notes" class="min-w-full">
+    <h2 class="text-2xl font-extrabold p-4 dark:text-white">Evening Data</h2>
+    <% if @evening_notes.any? %>
+        <%= render 'notes', notes: @evening_notes %>
+    <% else %>
+      <p class="text-center my-10">No evening notes found.</p>
+    <% end %>
+  </div>
+
+  <div id="notes" class="min-w-full">
+    <h2 class="text-2xl font-extrabold p-4 dark:text-white">Night Data</h2>
+    <% if @night_notes.any? %>
+        <%= render 'notes', notes: @night_notes %>
+    <% else %>
+      <p class="text-center my-10">No night notes found.</p>
+    <% end %>
+  </div></div>
