@@ -1,5 +1,7 @@
 <% if value == 'yes' then %>
   <td class="font-bold text-red-700"><%= value %></td>
+<% elsif value == 'no' %>
+  <td class="font-bold text-green-500"><%= value %></td>
 <% else %>
   <td><%= value %></td>
 <% end %>

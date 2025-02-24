@@ -5,7 +5,7 @@ class NotesController < ApplicationController
 
   # GET /notes or /notes.json
   def index
-    @notes = Note.all
+    @notes = Note.all.order(:measured_at)
     @morning_notes = morning_notes
     @daytime_notes = daytime_notes
     @evening_notes = evening_notes

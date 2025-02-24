@@ -3,7 +3,7 @@ module Zt
 
   def daytime_notes()
     selected_notes = []
-    Note.all.each do |note|
+    Note.all.order(:measured_at).each do |note|
       hour = note.measured_at.hour
       if (hour >=12 and hour < 18) 
         selected_notes << note
@@ -14,7 +14,7 @@ module Zt
 
   def evening_notes()
     selected_notes = []
-    Note.all.each do |note|
+    Note.all.order(:measured_at).each do |note|
       hour = note.measured_at.hour
       if (hour >=18 and hour < 24) 
         selected_notes << note
@@ -25,7 +25,7 @@ module Zt
 
   def morning_notes()
     selected_notes = []
-    Note.all.each do |note|
+    Note.all.order(:measured_at).each do |note|
       hour = note.measured_at.hour
       if (hour >=6 and hour < 12) 
         selected_notes << note
@@ -36,7 +36,7 @@ module Zt
 
   def night_notes()
     selected_notes = []
-    Note.all.each do |note|
+    Note.all.order(:measured_at).each do |note|
       hour = note.measured_at.hour
       if (hour >=0 and hour < 6) 
         selected_notes << note
