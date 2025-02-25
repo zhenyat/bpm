@@ -1,43 +1,44 @@
 <div id="<%= dom_id note %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Measured at:</strong>
-    <%= note.measured_at %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Systolic:</strong>
-    <%= note.systolic %>
-    <%#= render 'shared/systolic_colorized',  value: note.systolic %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Diastolic:</strong>
-    <%= note.diastolic %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Heart rate:</strong>
-    <%= note.heart_rate %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Afib:</strong>
-    <%= note.afib %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">State:</strong>
-    <%= note.state %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Statin dose:</strong>
-    <%= note.statin_dose %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Euthyrox dose:</strong>
-    <%= note.euthyrox_dose %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Weight:</strong>
-    <%= note.weight %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Comment:</strong>
-    <%= note.comment %>
-  </p>
+  <table class="table-auto">
+    <tr>
+      <td strong class="block font-medium mb-1">Measured at:</strong></td>
+      <td><%= note.measured_at %></td>
+    </tr>
+    <tr>
+      <td strong class="block font-medium mb-1">Systolic:</strong></td>
+      <td class="<%= systolic_color(note.systolic) %>"><%= note.systolic %></td>
+    </tr>
+    <tr>
+      <td strong class="block font-medium mb-1">Diastolic:</strong></td>
+      <td class="<%= diastolic_color(note.diastolic) %>"><%= note.diastolic %></td>
+    </tr>
+    <tr>
+      <td strong class="block font-medium mb-1">Heart rate:</strong></td>
+      <td class="<%= heart_rate_color(note.heart_rate) %>"><%= note.heart_rate %></td>
+    </tr>
+    <tr>
+      <td strong class="block font-medium mb-1 w-3xs">Artrial Fibrilation:</strong></td>
+      <td class="<%= afib_color(note.afib) %> w-ms"><%= note.afib %></td>
+    </tr>
+    <tr>
+      <td strong class="block font-medium mb-1">State:</strong></td>
+      <td class="<%= state_color(note.state) %>"><%= note.state %></td>
+    </tr>
+    <tr>
+      <td strong class="block font-medium mb-1">Statin dose:</strong></td>
+      <td><%= note.statin_dose %></td>
+    </tr>
+    <tr>
+      <td strong class="block font-medium mb-1">Euthyrox dose:</strong></td>
+      <td><%= note.euthyrox_dose %></td>
+    </tr>
+    <tr>
+      <td strong class="block font-medium mb-1">Weight:</strong></td>
+      <td><%= note.weight %></td>
+    </tr>
+    <tr>
+      <td strong class="block font-medium mb-1">Comment:</strong></td>
+      <td><%= note.comment %></td>
+    </tr>
+  </table>
 </div>
