@@ -24,7 +24,7 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
-    @notes_created_today = notes_created_today
+    @notes_created_today = {}
   end
 
   # POST /notes or /notes.json
